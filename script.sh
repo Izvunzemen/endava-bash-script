@@ -16,7 +16,7 @@ for i in https://www.capital.bg \
 	https://www.wikipedia.com \
 	https://www.kubernetes.io;
 
-do echo $i | wget -O $(gawk -F"//" '{print $2}') $i;
+do echo $i | wget -O $(awk -F"//" '{print $2}') $i;
 done
 #Check if all websites are downloaded
 
@@ -32,7 +32,7 @@ fi
 
 #Create text file with index files names
 
-ls -al www* | gawk '{print $9}' > indexlist.txt
+ls -al www* | awk '{print $9}' > indexlist.txt
 
 #Use the indexlist.txt to count href lines and create files with this lines only
 
@@ -53,7 +53,7 @@ do
 	echo "Removing hrefonly files."
 
 	rm hrefonly*
-
+	echo ""
 	echo ""
 	echo "All hrefonly files are now removed."
 	echo "----------------------------------"
