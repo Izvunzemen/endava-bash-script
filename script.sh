@@ -65,4 +65,4 @@ do
 end=`date +%s`
 
 echo ""
-echo "It takes $((end-start)) seconds to execute the script!"
+echo "It takes $((end-start)) seconds to execute this script!"
